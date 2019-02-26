@@ -13,14 +13,33 @@ mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
 mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
 mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
 
-function mapCustomizado(numeros, func){
-    const final = [numeros.length];
+function mapCustomizado (num){
+  
+    const numero = [numeros.length];
+  	const indice = [numeros.length];
     
     for (let i=0 ; i < numeros.length; i++) {
-         final[i] = func(numeros[i]);
-        }
-    return final;
-}
+      
+      	numero[i] = numeros[i];         
+        indice[i] = i;
+      
+      	console.log("Numero: " , numero);    //quitar
+  		console.log("Indice: " , indice);  //quitar
+      	
+        } 
+  
+  	   	return numero;
+ 		
+}; 
+
+var func1 = mapCustomizado(numeros,numero=>numero+1);
+console.log("Funcion 1: ", func1);
+
+var func2 = mapCustomizado(numeros,(numero,indice)=>numero+indice);
+console.log("Funcion 2: ", pepe2);
+
+var func3 = mapCustomizado(numeros,numero=>{});
+console.log("Funcion 3: ", func3); 
 
 /**
  * 4) Modificar el prototipo de la funcion constructora Array para que admita como nuevo método la funcion customizada del paso anterior para que cumpla los siguientes tests :
